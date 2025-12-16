@@ -1,0 +1,25 @@
+# Conclusões {#sec-conclusion}
+
+Este trabalho teve o objetivo de avaliar o nível das informações nos portais dos Detrans de todo o país, buscando entender como essas instituições trabalham e disponibilizam informações e serviços de interesse público. 
+
+A avaliação foi baseada em sete categorias. Em quatro delas - frota de veículos, condutores habilitados, infrações e sinistros de trânsito - a avaliação foi baseada na qualidade, variedade e disponibilidade de dados estatísticos, com base em três critérios: *Periodicidade*, *Interatividade* e *Nível de desagregação*. Considerando outras três categorias - atendimento ao público, educação para o trânsito e centro de formação de condutores - a avaliação foi realizada com critérios mais específicos de disponibilidade de informações para o público, sendo que algumas dessas categorias não apresentam dados estritamente estatísticos.
+
+Em uma verificação preliminar, observou-se que apenas 15 portais de Detrans contêm informações de todas as categorias consideradas, ou seja, mais que a metade. Nove UFs não disponibilizam dados sobre sinistros de trânsito, ou seja, nesses locais, uma das informações mais importantes para o diagnóstico da segurança viária não está disponível para o público.
+
+Observando as notas finais, destaca-se os Detrans com as melhores práticas: Detran-SE (nota 9,8), Detran-SP (nota 9,8) e Detran-ES (nota 9,5). Entre 2024 e 2025, os portais de 19 Detrans apresentaram uma melhoria no desempenho, mostrando que mais da metade dos portais disponíveis no país vem demonstrando evoluções positivas. Observando a nota média brasileira entre os dois períodos, percebe-se um aumento de 20% no desempenho.
+
+Essa pesquisa incluiu métodos e resultados importantes para a análise sistemática dos portais dos Detrans, levando em consideração o nível de divulgação de dados e serviços de importância para o desenvolvimento da mobilidade segura. Como próximos passos, entende-se a necessidade de aplicar novamente essa análise, assim obtendo informações mais precisas sobre a evolução de desempenho quando se considera a disponibilização de dados. Em adição, considera-se a necessidade de aprimorar os métodos aqui apresentados, levando a discussão para o poder público e também para a sociedade civil.
+
+## Recomendações
+
+Por fim, segue uma lista de recomendações para as instituições aprimorarem a disponibilidade de informações em seus portais:
+
+- Para os Detrans que não possuem as informações em algumas das categorias consideradas, recomenda-se a coleta estruturada e criação de bancos de dados como um passo anterior à disponibilização em seus portais. 
+
+- Para os Detrans que já divulgam as informações consideradas no estudo em seus portais, recomenda-se aprimorar a acessibilidade dos mesmos através de melhorias na interface e na experiência dos usuários (UI/UX)
+
+- Aprimorar o nível de detalhe das informações que são divulgadas, principalmente aquelas de natureza estatística (sinistros de trânsito, infrações, frota de veículos e condutores habilitados).
+
+- Pensar em meios de disponibilização que atendam as necessidades da população, da mídia e também dos técnicos e pesquisadores da área.
+
+- Muitos Detrans divulgam os seus dados através de arquivos PDF, o que prejudica a análise dos dados por parte dos interessados. Assim, sugere-se a criação de *dashboards*.

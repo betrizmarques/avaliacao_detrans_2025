@@ -1,0 +1,934 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+#| include: false
+#| label: setup
+
+source(here::here("R", "_common.R"))
+```
+
+
+# Resultados {#sec-results}
+
+Nessa seção os resultados estão organizados por categoria (@sec-results-cat) e estão apresentados em uma comparação entre os resultados atuais e os resultados obtidos na versão anterior deste trabalho, publicado em 2024 (@sec-results-evo). 
+
+## Resultados por Categoria {#sec-results-cat}
+
+Nessa seção os resultados estão organizados por categoria de análise, iniciando com a Frota de veículos e finalizando com Atendimento ao público. Cada subseção apresenta uma tabela e um mapa com as notas resultantes de cada categoria.
+
+### Frota de Veículos {#sec-results-frota}
+
+```{r}
+frota <- df_revisoes |>
+  filter(ano == 2025) |>
+  select(uf, starts_with("frota")) |>
+  mutate(regiao = get_region(uf), .before = 1) |>
+  mutate(nota_final = round(rowMeans(across(
+    starts_with("frota")
+  )), 2)) |>
+  arrange(desc(regiao))
+```
+
+A @tbl-frota aponta os resultados obtidos na categoria frota de veículos, com os níveis em cada categoria e as notas médias resultantes. A @fig-map-frota apresenta esses dados mapeados no território brasileiro. Observa-se que a *periodicidade* é o critério de melhor desempenho na maior parte dos portais, e *interatividade* é o critério de pior desempenho, considerando essa categoria.
+
+```{r}
+text_results <- function(results_df, values = c("min", "max")) {
+  df <- results_df |> 
+    mutate(estados = case_match(
+      uf,
+      "AC" ~ "Acre",
+      "AL" ~ "Alagoas",
+      "AP" ~ "Amapá",
+      "AM" ~ "Amazonas",
+      "BA" ~ "Bahia",
+      "CE" ~ "Ceará",
+      "DF" ~ "Distrito Federal",
+      "ES" ~ "Espírito Santo",
+      "GO" ~ "Goiás",
+      "MA" ~ "Maranhão",
+      "MT" ~ "Mato Grosso",
+      "MS" ~ "Mato Grosso do Sul",
+      "MG" ~ "Minas Gerais",
+      "PA" ~ "Pará",
+      "PB" ~ "Paraíba",
+      "PR" ~ "Paraná",
+      "PE" ~ "Pernambuco",
+      "PI" ~ "Piauí",
+      "RJ" ~ "Rio de Janeiro",
+      "RN" ~ "Rio Grande do Norte",
+      "RS" ~ "Rio Grande do Sul",
+      "RO" ~ "Rondônia",
+      "RR" ~ "Roraima",
+      "SC" ~ "Santa Catarina",
+      "SP" ~ "São Paulo",
+      "SE" ~ "Sergipe",
+      "TO" ~ "Tocantins",
+      .default = NA
+    ))
+  
+  if (values == "min") {
+    df |> 
+      slice_min(nota_final) |> 
+      pull(estados) |> 
+      sort() |> 
+      knitr::combine_words(
+        sep = ", ",
+        and = " e ",
+        oxford_comma = FALSE
+      )
+  } else {
+    df |> 
+      slice_max(nota_final) |> 
+      pull(estados) |> 
+      sort() |> 
+      knitr::combine_words(
+        sep = ", ",
+        and = " e ",
+        oxford_comma = FALSE
+      )
+  }
+  
+}
+
+numeric_results <- function(results_df, values = c("min", "max")) {
+  if (values == "min") {
+    results <- scales::number(
+      min(results_df$nota_final), 
+      accuracy = 0.1, 
+      decimal.mark = ",", 
+      big.mark = "."
+    )
+  } else {
+    results <- scales::number(
+      max(results_df$nota_final), 
+      accuracy = 0.1, 
+      decimal.mark = ",", 
+      big.mark = "."
+    )
+  }
+  return(results)
+}
+
+```
+
+
+Em relação à nota média, os estados com o melhor desempenho foram `r text_results(frota, "max")`, atingindo a nota máxima de `r numeric_results(frota, "max")`. Por outro lado, os estados com o pior desempenho foram `r text_results(frota, "min")`, com a nota média de `r numeric_results(frota, "min")` por não possuírem dados de frota de veículos em seus portais.
+
+::: panel-tabset
+### Tabela
+
+```{r}
+#| label: tbl-frota
+#| tbl-cap: Resultados da categoria "Frota de Veículos"
+
+frota |>
+  mutate(across(
+    starts_with("frota"),
+    ~ case_match(
+      .x,
+      10.0 ~ "Melhor",
+      6.7 ~ "Intermediário",
+      3.3 ~ "Inicial",
+      0 ~ "Ausente"
+    )
+  )) |>
+  rename(
+    `Região` = regiao,
+    UF = uf,
+    Periodicidade = frota_period,
+    Interatividade = frota_inter,
+    `Nível de desagregação` = frota_desagreg,
+    `Nota Média` = nota_final
+  ) |>
+  make_reactable(
+    columns = list(
+      `Nota Média` = colDef(
+        style = continuous_bg_func,
+        format = colFormat(locales = "de-DE", digits = 1)
+      ),
+      Periodicidade = colDef(style = quali_bg_func),
+      Interatividade = colDef(style = quali_bg_func),
+      `Nível de desagregação` = colDef(style = quali_bg_func)
+    )
+  )
+```
+
+### Mapa
+
+```{r}
+#| fig-cap: Resultados da categoria "Frota de Veículos"
+#| label: fig-map-frota
+
+frota_map <- 
+  frota |> 
+  map_preproc()
+
+frota_map |>
+  make_leaflet()
+```
+:::
+
+### Condutores Habilitados {#sec-results-drivers}
+
+```{r}
+condutores <- df_revisoes |>
+  filter(ano == 2025) |>
+  select(uf, starts_with("condutores")) |>
+  mutate(regiao = get_region(uf), .before = 1) |>
+  mutate(nota_final = round(rowMeans(across(
+    starts_with("condutores")
+  )), 2)) |>
+  arrange(desc(regiao))
+```
+
+A @tbl-condutores e a @fig-map-condutores mostram o desempenho dos Detrans na disponibilização de dados sobre os condutores habilitados. Novamente, conforme também visto na categoria frota de veículos, a periodicidade e a interatividade são os critérios com maior e menor performance geral, respectivamente. Dois estados atingiram a nota máxima: `r text_results(condutores, "max")`. Os portais de sete estados não apresentam dados sobre os condutores habilitados: `r text_results(condutores, "min")`.
+
+::: panel-tabset
+### Tabela
+
+```{r}
+#| label: tbl-condutores
+#| tbl-cap: Resultados da categoria "Condutores Habilitados"
+
+condutores |>
+  mutate(across(
+    starts_with("condutores"),
+    ~ case_match(
+      .x,
+      10.0 ~ "Melhor",
+      6.7 ~ "Intermediário",
+      3.3 ~ "Inicial",
+      0 ~ "Ausente"
+    )
+  )) |> 
+  rename(
+    `Região` = regiao,
+    UF = uf,
+    Periodicidade = condutores_period,
+    Interatividade = condutores_inter,
+    `Nível de desagregação` = condutores_desagreg,
+    `Nota Média` = nota_final
+  ) |> 
+  make_reactable(
+    columns = list(
+      `Nota Média` = colDef(
+        style = continuous_bg_func,
+        format = colFormat(locales = "de-DE", digits = 1)
+      ),
+      Periodicidade = colDef(style = quali_bg_func),
+      Interatividade = colDef(style = quali_bg_func),
+      `Nível de desagregação` = colDef(style = quali_bg_func)
+    )
+  )
+```
+
+### Mapa
+
+```{r}
+#| fig-cap: Resultados da categoria "Condutores Habilitados"
+#| label: fig-map-condutores
+
+condutores_map <- 
+  condutores |> 
+  map_preproc()
+
+condutores_map |> 
+  make_leaflet()
+```
+:::
+
+
+### Centro de Formação de Condutores {#sec-results-cfc}
+
+```{r}
+cfcs <- df_revisoes |>
+  filter(ano == 2025) |>
+  select(uf, nota_final = cfcs) |>
+  mutate(regiao = get_region(uf), .before = 1) |>
+  arrange(desc(regiao))
+```
+
+As notas médias resultantes para essa categoria estão ilustradas na @tbl-cfcs e na @fig-map-cfcs. Observa-se a predominância do desempenho intermediário nesta categoria / critério. Os estados com a melhor prática são o `r text_results(cfcs, "max")`. Os estados com prática intermediária/ausente foram `r text_results(cfcs, "min")`, atingindo uma nota média de `r numeric_results(cfcs, "min")`.
+
+::: panel-tabset
+### Tabela
+
+```{r}
+#| tbl-cap: Resultados da categoria "CFCs"
+#| label: tbl-cfcs
+
+cfcs |>
+  mutate(
+    nota = nota_final,
+    cfcs_results =
+       case_match(
+        nota,
+        10.0 ~ "Melhor",
+        6.7 ~ "Intermediário",
+        3.3 ~ "Inicial",
+        0 ~ "Ausente"
+      )
+  ) |>
+  select(regiao, uf, cfcs_results, nota) |>
+  rename(
+    `Região` = regiao,
+    UF = uf,
+    `Lista de CFCs` = cfcs_results,
+    `Nota Média` = nota
+  ) |> 
+  make_reactable(
+    columns = list(
+      `Nota Média` = colDef(
+        style = continuous_bg_func,
+        format = colFormat(locales = "de-DE", digits = 1)
+      ),
+      `Lista de CFCs` = colDef(style = quali_bg_func)
+    )
+  )
+```
+
+### Mapa
+
+```{r}
+#| fig-cap: Resultados da categoria "CFCs"
+#| label: fig-map-cfcs
+
+cfcs_map <- 
+  cfcs |> 
+ #rename(nota_final = nota) |> 
+  map_preproc()
+
+cfcs_map |> 
+  make_leaflet()
+```
+:::
+
+### Infrações {#sec-results-infracoes}
+
+```{r}
+infracoes <- df_revisoes |>
+  filter(ano == 2025) |>
+  select(uf, starts_with("infracoes")) |>
+  mutate(regiao = get_region(uf), .before = 1) |>
+  mutate(nota_final = round(rowMeans(across(
+    starts_with("infracoes")
+  )), 2)) |>
+  arrange(desc(regiao))
+```
+
+A @tbl-infracoes e a @fig-map-infracoes contêm os resultados da categoria infrações. Observa-se que o critério com o melhor desempenho entre as UFs foi *Nível de desagregação* e o critério com pior desempenho foi *Interatividade*. Considerando o desempenho das UFs com base na nota média, os melhores desempenhos foram observados nos portais dos Detrans de `r text_results(infracoes, "max")`. Houve `r length(infracoes$nota_final[infracoes$nota_final == 0])` Detrans sem dados de infrações em seus portais, configurando uma prática ausente. Dentre eles, inclui-se `r text_results(infracoes, "min")`.
+
+::: panel-tabset
+### Tabela
+
+```{r}
+#| tbl-cap: Resultados da categoria "Infrações"
+#| label: tbl-infracoes
+
+infracoes |>
+  mutate(across(
+    starts_with("infracoes"),
+    ~ case_match(
+      .x,
+      10.0 ~ "Melhor",
+      6.7 ~ "Intermediário",
+      3.3 ~ "Inicial",
+      0 ~ "Ausente"
+    )
+  )) |>
+  rename(
+    `Região` = regiao,
+    UF = uf,
+    Periodicidade = infracoes_period,
+    Interatividade = infracoes_inter,
+    `Nível de desagregação` = infracoes_desagreg,
+    `Nota Média` = nota_final
+  ) |> 
+  make_reactable(
+    columns = list(
+      `Nota Média` = colDef(
+        style = continuous_bg_func,
+        format = colFormat(locales = "de-DE", digits = 1)
+      ),
+      Periodicidade = colDef(style = quali_bg_func),
+      Interatividade = colDef(style = quali_bg_func),
+      `Nível de desagregação` = colDef(style = quali_bg_func)
+    )
+  )
+```
+
+### Mapa
+
+```{r}
+#| fig-cap: Resultados da categoria "Infrações"
+#| label: fig-map-infracoes
+
+infracoes_map <- 
+  infracoes |> 
+  map_preproc()
+
+infracoes_map |> 
+  make_leaflet()
+```
+:::
+
+### Sinistros de Trânsito {#sec-results-sinistros}
+
+```{r}
+sinistros <- df_revisoes |>
+  filter(ano == 2025) |>
+  select(uf, starts_with("sinistros")) |>
+  mutate(regiao = get_region(uf), .before = 1) |>
+  mutate(nota_final = round(rowMeans(across(
+    starts_with("sinistros")
+  )), 2)) |>
+  arrange(desc(regiao))
+```
+
+Os resultados da categoria sinistros de trânsito está apresentada na @tbl-sinistros e na @fig-map-sinistros. Nessa categoria, o critério *periodicidade* apresentou melhor desempenho e o critério *interatividade* apresentou o pior. Entre as instituições, os Detrans de `r text_results(sinistros, "max")` apresentaram o melhor resultado, atingindo a nota `r numeric_results(sinistros, "max")`. Detrans de `r length(sinistros$nota_final[sinistros$nota_final == 0])` estados não possuem dados sobre sinistros ocorridos, disponibilizados em seus portais.
+
+::: panel-tabset
+### Tabela
+
+```{r}
+#| tbl-cap: Resultados da categoria "Sinistros"
+#| label: tbl-sinistros
+
+sinistros |>
+  mutate(across(
+    starts_with("sinistros"),
+    ~ case_match(
+      .x,
+      10.0 ~ "Melhor",
+      6.7 ~ "Intermediário",
+      3.3 ~ "Inicial",
+      0 ~ "Ausente"
+    )
+  )) |>
+  rename(
+    `Região` = regiao,
+    UF = uf,
+    Periodicidade = sinistros_period,
+    Interatividade = sinistros_inter,
+    `Nível de desagregação` = sinistros_desagreg,
+    `Nota Média` = nota_final
+  ) |> 
+  make_reactable(
+    columns = list(
+      `Nota Média` = colDef(
+        style = continuous_bg_func,
+        format = colFormat(locales = "de-DE", digits = 1)
+      ),
+      Periodicidade = colDef(style = quali_bg_func),
+      Interatividade = colDef(style = quali_bg_func),
+      `Nível de desagregação` = colDef(style = quali_bg_func)
+    )
+  )
+```
+
+### Mapa
+
+```{r}
+#| fig-cap: Resultados da categoria "Sinistros"
+#| label: fig-map-sinistros
+
+sinistros_map <- 
+  sinistros |> 
+  map_preproc()
+
+sinistros_map |> 
+  make_leaflet()
+```
+:::
+
+
+### Educação para o Trânsito {#sec-results-educ}
+
+```{r}
+educacao <- df_revisoes |>
+  filter(ano == 2025) |>
+  select(uf, starts_with("educ")) |>
+  mutate(regiao = get_region(uf), .before = 1) |>
+  mutate(nota_final = round(rowMeans(across(
+    starts_with("educ")
+  )), 2)) |>
+  arrange(desc(regiao))
+```
+
+Os resultados da categoria educação para o trânsito estão apresentadas na @tbl-educ e na @fig-map-educ. Os portais de todos os Detrans apresentaram conteúdos sobre educação para o trânsito, assim, nenhum foi classificado com prática ausente. O `r text_results(educacao, "max")`, atingiram a nota máxima nessa categoria. Por outro lado, os Detrans de `r text_results(educacao, "min")` atingiram as menores médias, com uma nota de `r numeric_results(educacao, "min")`.
+
+::: panel-tabset
+### Tabela
+
+```{r}
+#| tbl-cap: Resultados da categoria "Educação para o Trânsito"
+#| label: tbl-educ
+
+educacao |> 
+    mutate(across(
+    starts_with("educ"),
+    ~ case_match(
+      .x,
+      10.0 ~ "Melhor",
+      6.7 ~ "Intermediário",
+      3.3 ~ "Inicial",
+      0 ~ "Ausente"
+    )
+  )) |>
+  rename(
+    `Região` = regiao,
+    UF = uf,
+    `Conteúdos didáticos` = educ_conteudos,
+    `Divulgação de atividades` = educ_divulgacao,
+    `Nota Média` = nota_final
+  ) |> 
+  make_reactable(
+    columns = list(
+      `Nota Média` = colDef(
+        style = continuous_bg_func,
+        format = colFormat(locales = "de-DE", digits = 1)
+      ),
+      `Conteúdos didáticos` = colDef(style = quali_bg_func),
+      `Divulgação de atividades` = colDef(style = quali_bg_func)
+    )
+  )
+```
+
+### Mapa
+
+```{r}
+#| fig-cap: Resultados da categoria "Educação para o Trânsito"
+#| label: fig-map-educ
+
+educacao_map <-
+  educacao |>
+  map_preproc()
+
+educacao_map |> 
+  make_leaflet()
+```
+:::
+
+### Atendimento ao Público {#sec-results-atend}
+
+```{r}
+atendimento <- df_revisoes |>
+  filter(ano == 2025) |>
+  select(uf, starts_with("atendimento")) |>
+  mutate(regiao = get_region(uf), .before = 1) |>
+  mutate(nota_final = round(rowMeans(across(
+    starts_with("atendimento")
+  )), 2)) |>
+  arrange(desc(regiao))
+```
+
+Os resultados da categoria atendimento ao público estão apresentados na @tbl-atendimento e na @fig-map-atend. É notável a ausência de estatísticas de atendimento ao público na maioria dos portais dos Detrans, resultando em menores médias. Como destaque positivo, os Detrans de `r text_results(atendimento, "max")` atingiram a melhor média. Os portais dos Detrans de `r text_results(atendimento, "min")` apresentou  a menor média, com uma pontuação de `r numeric_results(atendimento, "min")`.
+
+::: panel-tabset
+### Tabela
+
+```{r}
+#| tbl-cap: Resultados da categoria "Atendimento ao Público"
+#| label: tbl-atendimento
+
+atendimento |>
+  mutate(
+    atendimento_canais =
+      case_match(
+        atendimento_canais,
+        10.0 ~ "Melhor",
+        6.7 ~ "Intermediário",
+        3.3 ~ "Inicial",
+        0 ~ "Ausente"
+      ),
+    atendimento_estatistica =
+      case_match(
+        atendimento_estatistica,
+        10.0 ~ "Melhor",
+        6.7 ~ "Intermediário",
+        3.3 ~ "Inicial",
+        0 ~ "Ausente"
+      )
+  ) |>
+  rename(
+    `Região` = regiao,
+    UF = uf,
+    `Estatísticas de atendimento` = atendimento_estatistica,
+    `Canais de atendimento` = atendimento_canais,
+    `Nota Média` = nota_final
+  ) |>
+  make_reactable(
+    columns = list(
+      `Nota Média` = colDef(
+        style = continuous_bg_func,
+        format = colFormat(locales = "de-DE", digits = 1)
+      ),
+      `Estatísticas de atendimento` = colDef(style = quali_bg_func),
+      `Canais de atendimento` = colDef(style = quali_bg_func)
+    )
+  )
+```
+
+### Mapa
+
+```{r}
+#| fig-cap: Resultados da categoria "Atendimento ao Público"
+#| label: fig-map-atend
+
+atendimento_map <- 
+  atendimento |> 
+  map_preproc()
+
+atendimento_map |> 
+  make_leaflet()
+```
+:::
+
+## Evolução dos Resultados {#sec-results-evo}
+
+```{r}
+coldef1 <- 
+  colDef(
+    format = colFormat(locales = "de-DE", digits = 1)
+  )
+
+coldef2 <- 
+  colDef(
+    style = continuous_bg_func,
+    format = colFormat(locales = "de-DE", digits = 1),
+    name = "2024"
+  )
+
+coldef3 <- 
+  colDef(
+    style = continuous_bg_func,
+    format = colFormat(locales = "de-DE", digits = 1),
+    name = "2025"
+  )
+
+variacao <- df_revisoes |>
+  select(uf, nota_final, ano) |>
+  pivot_wider(names_from = ano,
+              names_prefix = "ano",
+              values_from = nota_final) |>
+  summarise(
+    .by = uf,
+    ano2024 = mean(ano2024),
+    ano2025 = mean(ano2025)
+  ) |>
+  select(uf, ano2024)
+
+consulta_pre <- df_revisoes |>
+  mutate(regiao = get_region(uf), .before = 1) |>
+  filter(ano == 2025) |>
+  mutate(
+    frota = rowMeans(across(starts_with("frota"))),
+    condutores = rowMeans(across(starts_with("condutores"))),
+    infracoes = rowMeans(across(starts_with("infracoes"))),
+    sinistros = rowMeans(across(starts_with("sinistros"))),
+    atendimento = rowMeans(across(starts_with("atendimento"))),
+    educ = rowMeans(across(starts_with("educ"))),
+    cfcs
+  ) |>
+  select(regiao,
+         uf,
+         frota,
+         condutores,
+         infracoes,
+         sinistros,
+         atendimento,
+         educ,
+         cfcs)
+
+tbl_final = consulta_pre |>
+  mutate(nota_final = rowMeans(across(frota:cfcs))) |>
+  arrange(desc(nota_final)) |>
+  select(-regiao) |>
+  left_join(variacao, by = "uf") |>
+  relocate(nota_final, .after = ano2024) |> 
+  rename_with(.fn = str_to_title) |> 
+  rename(
+    UF = Uf,
+    `Infrações` = Infracoes,
+    `Educação` = Educ,
+    CFCs = Cfcs,
+    ano_2024 = Ano2024,
+    ano_2025 = Nota_final
+  )
+```
+
+```{r}
+calc_media <- function(df_final, ano) {
+  scales::number(
+    mean(df_final |> pull({{ ano }})), 
+    accuracy = 0.01, 
+    decimal.mark = ",", 
+    big.mark = "."
+  )
+}
+
+delta_media <- function(media_2024, media_2025) {
+  scales::percent(
+    ((media_2025 - media_2024) / media_2024), 
+    accuracy = 0.1, 
+    decimal.mark = ",", 
+    big.mark = "."
+  )
+}
+
+delta <- delta_media(
+  tbl_final |> pull(ano_2024) |> mean(),
+  tbl_final |> pull(ano_2025) |> mean()
+)
+
+print_results_text <- function(df_final, type = c("min", "max")) {
+  
+  df_text <- df_final |> 
+    select(UF, ano_2025) |> 
+    mutate(
+      estados = case_match(
+        UF,
+        "AC" ~ "Acre",
+        "AL" ~ "Alagoas",
+        "AP" ~ "Amapá",
+        "AM" ~ "Amazonas",
+        "BA" ~ "Bahia",
+        "CE" ~ "Ceará",
+        "DF" ~ "Distrito Federal",
+        "ES" ~ "Espírito Santo",
+        "GO" ~ "Goiás",
+        "MA" ~ "Maranhão",
+        "MT" ~ "Mato Grosso",
+        "MS" ~ "Mato Grosso do Sul",
+        "MG" ~ "Minas Gerais",
+        "PA" ~ "Pará",
+        "PB" ~ "Paraíba",
+        "PR" ~ "Paraná",
+        "PE" ~ "Pernambuco",
+        "PI" ~ "Piauí",
+        "RJ" ~ "Rio de Janeiro",
+        "RN" ~ "Rio Grande do Norte",
+        "RS" ~ "Rio Grande do Sul",
+        "RO" ~ "Rondônia",
+        "RR" ~ "Roraima",
+        "SC" ~ "Santa Catarina",
+        "SP" ~ "São Paulo",
+        "SE" ~ "Sergipe",
+        "TO" ~ "Tocantins",
+        .default = NA
+      ),
+      results_text = scales::number(
+        ano_2025, 
+        accuracy = 0.1, 
+        decimal.mark = ",", 
+        big.mark = "."
+      ),
+      text = glue::glue("{estados} ({results_text})")
+    )
+  
+    if (type == "max") {
+      df_text |> 
+        filter(ano_2025 > 7) |> 
+        pull(text) |> 
+        knitr::combine_words(oxford_comma = FALSE, and = " e ", sep = ", ")
+    } else {
+      df_text |> 
+        slice_min(ano_2025, n = 5) |>
+        pull(text) |> 
+        knitr::combine_words(oxford_comma = FALSE, and = " e ", sep = ", ")
+    }
+}
+```
+
+A @tbl-final apresenta as notas calculadas das categorias analisadas e a média final do valor referente a 2025. Também inclui-se as médias finais obtidas no estudo de 2024, a fins de comparação com os valores atuais. Ao realizar uma média nacional com base nas notas de todas as UFs, em 2025 o Brasil atinge a nota de `r calc_media(tbl_final, ano_2025)`. Isso representa um aumento de `r delta`, considerando a média nacional obtida em 2024, que foi de `r calc_media(tbl_final, ano_2024)`.
+
+Considerando os resultados de 2025, seguem os Detrans que obtiveram uma nota final acima de 7,0: `r print_results_text(tbl_final, "max")`. Dentre as menores notas, destaca-se os seguintes Detrans com as práticas mais iniciais: `r print_results_text(tbl_final, "min")`.
+
+```{r}
+#| tbl-cap: Resultados finais
+#| label: tbl-final
+
+tbl_final |> make_reactable(
+  columns = list(
+    Frota = coldef1,
+    Condutores = coldef1,
+    `Infrações` = coldef1,
+    Sinistros = coldef1,
+    Atendimento = coldef1,
+    `Educação` = coldef1,
+    CFCs = coldef1,
+    ano_2024 = coldef2,
+    ano_2025 = coldef3
+    )
+  )
+
+notas_10 <- 
+  consulta_pre |>
+  select(-regiao) |> 
+  pivot_longer(-uf) |> 
+  filter(value == 10) |> 
+  arrange(name) |> 
+  select(-value) |> 
+  pivot_wider(names_from = name, values_from = uf)
+
+```
+
+Em destaque, observa-se os estados que atingiram a nota máxima (10) em alguma das sete categorias de informações consultadas:
+
+- **Atendimento ao público**: `r notas_10$atendimento |> unlist() |> combine_words(oxford_comma = F, and = " e ")`;
+- **CFCs**: `r notas_10$cfcs |> unlist() |> combine_words(oxford_comma = F, and = " e ")`;
+- **Condutores habitados**: `r notas_10$condutores |> unlist() |> combine_words(oxford_comma = F, and = " e ")`;
+- **Educação para o trânsito**: `r notas_10$educ |> unlist() |> combine_words(oxford_comma = F, and = " e ")`;
+- **Frota de veículos**: `r notas_10$frota |> unlist() |> combine_words(oxford_comma = F, and = " e ")`;
+- **Infrações**: `r notas_10$infracoes |> unlist() |> combine_words(oxford_comma = F, and = " e ")`, e;
+- **Sinistros de trânsito**: `r notas_10$sinistros |> unlist() |> combine_words(oxford_comma = F, and = " e ")`
+
+```{r}
+dumbbell <- df_revisoes |>
+  select(uf, nota_final, ano) |>
+  mutate(regiao = get_region(uf)) |>
+  pivot_wider(names_from = ano,
+              names_prefix = "ano_",
+              values_from = nota_final) |>
+  mutate(uf = reorder(uf, ano_2025),
+         color = if_else(ano_2024 < ano_2025, "up", "down"))
+
+print_delta_text <- function(df_dumbbell, type = c("up", "down")) {
+
+  df_results <- df_dumbbell |> 
+    mutate(
+      estados = case_match(
+        uf,
+        "AC" ~ "Acre",
+        "AL" ~ "Alagoas",
+        "AP" ~ "Amapá",
+        "AM" ~ "Amazonas",
+        "BA" ~ "Bahia",
+        "CE" ~ "Ceará",
+        "DF" ~ "Distrito Federal",
+        "ES" ~ "Espírito Santo",
+        "GO" ~ "Goiás",
+        "MA" ~ "Maranhão",
+        "MT" ~ "Mato Grosso",
+        "MS" ~ "Mato Grosso do Sul",
+        "MG" ~ "Minas Gerais",
+        "PA" ~ "Pará",
+        "PB" ~ "Paraíba",
+        "PR" ~ "Paraná",
+        "PE" ~ "Pernambuco",
+        "PI" ~ "Piauí",
+        "RJ" ~ "Rio de Janeiro",
+        "RN" ~ "Rio Grande do Norte",
+        "RS" ~ "Rio Grande do Sul",
+        "RO" ~ "Rondônia",
+        "RR" ~ "Roraima",
+        "SC" ~ "Santa Catarina",
+        "SP" ~ "São Paulo",
+        "SE" ~ "Sergipe",
+        "TO" ~ "Tocantins",
+        .default = NA
+      ),
+      delta = ano_2025 - ano_2024,
+      delta_text = scales::number(
+        abs(delta), 
+        accuracy = 0.01, 
+        decimal.mark = ",", 
+        big.mark = "."
+      ),
+      signal = if_else(color == "up", "+", "-"),
+      print_text = glue::glue("{estados} ({signal}{delta_text})")
+    )
+  
+  if (type == "up") {
+    df_results |> 
+      slice_max(delta, n = 5) |> 
+      pull(print_text) |> 
+      knitr::combine_words(oxford_comma = FALSE, and = " e ", sep = ", ")
+  } else {
+    df_results |> 
+      slice_min(delta, n = 5) |> 
+      pull(print_text) |> 
+      knitr::combine_words(oxford_comma = FALSE, and = " e ", sep = ", ")
+  }
+}
+
+```
+
+
+A @fig-dumbbell apresenta a variação entre os resultados de nota final obtidos na pesquisa de 2024 e na pesquisa atual de 2025. Dentre as 27 UFs, observa-se que 19 apresentaram uma evolução positiva neste período de tempo. Observa-se que a maioria dos estados com aumento de nota pertence às regiões Nordeste e Norte (onde estavam as notas mais baixas), enquanto regiões como Sul e Sudeste apresentaram maior estabilidade, com vários estados mantendo suas notas altas anteriores.
+
+De forma absoluta, os portais dos Detrans que apresentaram as melhores evoluções em relação foram aqueles dos estados do `r print_delta_text(dumbbell, "up")`. De outro lado, os estados que apresentaram as maiores quedas ou estagnação de desempenho foram `r print_delta_text(dumbbell, "down")`. 
+
+```{r}
+#| fig-cap: Evolução dos resultados entre 2024 e 2025
+#| label: fig-dumbbell
+#| fig-height: 5
+
+dumbbell_plot <-
+  ggplot(dumbbell) +
+  geom_segment_interactive(
+    aes(
+      y = uf,
+      yend = uf,
+      x = ano_2024,
+      xend = ano_2025,
+      color = color,
+      tooltip = sprintf(
+        "Estado: %s<br>Nota de 2025: %.2f<br>Nota de 2024: %.2f",
+        uf,
+        ano_2025,
+        ano_2024
+      ),
+      data_id = uf
+    ),
+    arrow = arrow(
+      length = unit(.1, "inches"),
+      type = "closed",
+      angle = 20
+    ),
+    hover_nearest = T,
+    show.legend = F
+  ) +
+  scale_color_manual(values = c(onsv_palette$red, onsv_palette$green)) +
+  scale_x_continuous(limits = c(0, 10)) +
+  scale_y_discrete(position = "left",) +
+  labs(x = NULL, y = NULL, color = NULL) +
+  theme_bw() +
+  facet_grid(vars(regiao),
+             scales = "free_y",
+             space = "free_y",
+             switch = "y") +
+  theme(strip.text = element_text(size = 7),
+        axis.text.y = element_text(size = 8))
+
+girafe(ggobj = dumbbell_plot, options = list(opts_toolbar(saveaspng = F)))
+```
+
+A @fig-map-compare apresenta mapas para a comparação das pontuações finais de todos estados. O mapa da esquerda apresenta os resultados obtidos na pesquisa de 2024 e o mapa da direita apresenta os resultados obtidos nesta pesquisa, referente ao ano de 2025.
+
+```{r}
+#| fig-cap: Notas finais para Detrans em 2024 e 2025
+#| label: fig-map-compare
+
+title_2024 <- htmltools::tags$div(htmltools::HTML('2024'))
+title_2025 <- htmltools::tags$div(htmltools::HTML('2025'))
+
+comparison_map <-
+  df_revisoes |> 
+  map_preproc()
+
+comp_map_2024 <- 
+  comparison_map[comparison_map$ano == 2024, ] |> 
+  make_leaflet() |> 
+  addControl(title_2024, position = "topright")
+
+comp_map_2025 <-
+  comparison_map[comparison_map$ano == 2025, ] |> 
+  make_leaflet() |> 
+  addControl(title_2025, position = "topright")
+
+sync(comp_map_2024, comp_map_2025, sync = F)
+```
