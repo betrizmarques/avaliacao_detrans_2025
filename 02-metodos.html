@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,14 +35,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./logo/onsv-fav.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-27646530733116c5bb9148f6545a8ae0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-bf1ce2a9bbe0a9c3d8b1e0a16455843c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,13 +72,21 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+
 <script src="site_libs/react-18.2.0/react.min.js"></script>
+
 <script src="site_libs/react-18.2.0/react-dom.min.js"></script>
+
 <script src="site_libs/reactwidget-2.0.0/react-tools.js"></script>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
 <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
-<script src="site_libs/reactable-binding-0.4.4/reactable.js"></script>
+
+<link href="site_libs/reactable-0.4.5/reactable.css" rel="stylesheet">
+
+<script src="site_libs/reactable-binding-0.4.5/reactable.js"></script>
+
 
 
 <meta name="twitter:title" content="2&nbsp; Métodos – Avaliação do Nível de Informações Disponibilizadas nos Portais dos Departamentos Estaduais de Trânsito - Detrans">
@@ -107,7 +116,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Avaliação do Nível de Informações Disponibilizadas nos Portais dos Departamentos Estaduais de Trânsito - Detrans</a> 
         <div class="sidebar-tools-main">
@@ -231,8 +242,8 @@ Tabela&nbsp;2.1: Consultas preliminares
 </figcaption>
 <div aria-describedby="tbl-consultas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div class="reactable html-widget html-fill-item" id="htmlwidget-429d1798bce679489836" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-429d1798bce679489836">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Região":["Sul","Sul","Sul","Sudeste","Sudeste","Sudeste","Sudeste","Norte","Norte","Norte","Norte","Norte","Norte","Norte","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Centro-Oeste","Centro-Oeste","Centro-Oeste","Centro-Oeste"],"Uf":["RS","SC","PR","SP","RJ","MG","ES","RO","AC","AM","AP","PA","TO","RR","SE","RN","PE","CE","AL","MA","PB","BA","PI","GO","MS","MT","DF"],"Frota":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","NÃO","NÃO","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","NÃO","SIM","SIM","SIM","SIM"],"Condutores":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","NÃO","NÃO","NÃO","SIM","SIM","SIM","SIM","SIM","NÃO","SIM","SIM","NÃO","SIM","SIM","SIM","SIM"],"Infrações":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","NÃO","NÃO","SIM","SIM","NÃO","NÃO","NÃO","SIM","SIM","SIM","SIM","SIM","NÃO","SIM","SIM","NÃO","SIM","SIM","SIM","NÃO"],"Sinistros":["SIM","SIM","SIM","SIM","SIM","NÃO","SIM","SIM","SIM","SIM","NÃO","NÃO","NÃO","NÃO","SIM","SIM","NÃO","NÃO","SIM","NÃO","SIM","SIM","NÃO","SIM","SIM","SIM","SIM"],"Atendimento":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM"],"Educação":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM"],"Cfcs":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM"]},"columns":[{"id":"Região","name":"Região","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"}},{"id":"Uf","name":"Uf","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"}},{"id":"Frota","name":"Frota","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Condutores","name":"Condutores","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Infrações","name":"Infrações","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"}]},{"id":"Sinistros","name":"Sinistros","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Atendimento","name":"Atendimento","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Educação","name":"Educação","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Cfcs","name":"Cfcs","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]}],"resizable":true,"searchable":true,"pagination":false,"highlight":true,"bordered":true,"compact":true,"nowrap":true,"theme":{"style":{"fontFamily":"-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif","fontSize":"0.80rem"},"searchInputStyle":{"color":"#00496d"}},"dataKey":"cd627392895576654b3a8d9fe1dc4863"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-e27ca9d00c167ce06776" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e27ca9d00c167ce06776">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Região":["Sul","Sul","Sul","Sudeste","Sudeste","Sudeste","Sudeste","Norte","Norte","Norte","Norte","Norte","Norte","Norte","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Nordeste","Centro-Oeste","Centro-Oeste","Centro-Oeste","Centro-Oeste"],"Uf":["RS","SC","PR","SP","RJ","MG","ES","RO","AC","AM","AP","PA","TO","RR","SE","RN","PE","CE","AL","MA","PB","BA","PI","GO","MS","MT","DF"],"Frota":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","NÃO","NÃO","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","NÃO","SIM","SIM","SIM","SIM"],"Condutores":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","NÃO","NÃO","NÃO","SIM","SIM","SIM","SIM","SIM","NÃO","SIM","SIM","NÃO","SIM","SIM","SIM","SIM"],"Infrações":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","NÃO","NÃO","SIM","SIM","NÃO","NÃO","NÃO","SIM","SIM","SIM","SIM","SIM","NÃO","SIM","SIM","NÃO","SIM","SIM","SIM","NÃO"],"Sinistros":["SIM","SIM","SIM","SIM","SIM","NÃO","SIM","SIM","SIM","SIM","NÃO","NÃO","NÃO","NÃO","SIM","SIM","NÃO","NÃO","SIM","NÃO","SIM","SIM","NÃO","SIM","SIM","SIM","SIM"],"Atendimento":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM"],"Educação":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM"],"Cfcs":["SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM","SIM"]},"columns":[{"id":"Região","name":"Região","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"}},{"id":"Uf","name":"Uf","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"}},{"id":"Frota","name":"Frota","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Condutores","name":"Condutores","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Infrações","name":"Infrações","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"}]},{"id":"Sinistros","name":"Sinistros","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#D7191C","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Atendimento","name":"Atendimento","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Educação","name":"Educação","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]},{"id":"Cfcs","name":"Cfcs","type":"character","minWidth":50,"align":"center","headerStyle":{"background":"#00496d","color":"white"},"style":[{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"},{"background":"#1fa149","color":"white"}]}],"resizable":true,"searchable":true,"pagination":false,"highlight":true,"bordered":true,"compact":true,"nowrap":true,"theme":{"style":{"fontFamily":"-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif","fontSize":"0.80rem"},"searchInputStyle":{"color":"#00496d"}},"dataKey":"cd627392895576654b3a8d9fe1dc4863"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </figure>
@@ -281,23 +292,23 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
 </figcaption>
 <div aria-describedby="tbl-criterios-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="eppsqoquxv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eppsqoquxv table {
+<div id="fxdanfzjlp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fxdanfzjlp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eppsqoquxv thead, #eppsqoquxv tbody, #eppsqoquxv tfoot, #eppsqoquxv tr, #eppsqoquxv td, #eppsqoquxv th {
+#fxdanfzjlp thead, #fxdanfzjlp tbody, #fxdanfzjlp tfoot, #fxdanfzjlp tr, #fxdanfzjlp td, #fxdanfzjlp th {
   border-style: none;
 }
 
-#eppsqoquxv p {
+#fxdanfzjlp p {
   margin: 0;
   padding: 0;
 }
 
-#eppsqoquxv .gt_table {
+#fxdanfzjlp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -323,12 +334,12 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-left-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_caption {
+#fxdanfzjlp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eppsqoquxv .gt_title {
+#fxdanfzjlp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -340,7 +351,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-bottom-width: 0;
 }
 
-#eppsqoquxv .gt_subtitle {
+#fxdanfzjlp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -352,7 +363,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-top-width: 0;
 }
 
-#eppsqoquxv .gt_heading {
+#fxdanfzjlp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -364,13 +375,13 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-right-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_bottom_border {
+#fxdanfzjlp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_col_headings {
+#fxdanfzjlp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -385,7 +396,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-right-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_col_heading {
+#fxdanfzjlp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -405,7 +416,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   overflow-x: hidden;
 }
 
-#eppsqoquxv .gt_column_spanner_outer {
+#fxdanfzjlp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -417,15 +428,15 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   padding-right: 4px;
 }
 
-#eppsqoquxv .gt_column_spanner_outer:first-child {
+#fxdanfzjlp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eppsqoquxv .gt_column_spanner_outer:last-child {
+#fxdanfzjlp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eppsqoquxv .gt_column_spanner {
+#fxdanfzjlp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -437,11 +448,11 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   width: 100%;
 }
 
-#eppsqoquxv .gt_spanner_row {
+#fxdanfzjlp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eppsqoquxv .gt_group_heading {
+#fxdanfzjlp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -467,7 +478,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   text-align: left;
 }
 
-#eppsqoquxv .gt_empty_group_heading {
+#fxdanfzjlp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -482,15 +493,15 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   vertical-align: middle;
 }
 
-#eppsqoquxv .gt_from_md > :first-child {
+#fxdanfzjlp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eppsqoquxv .gt_from_md > :last-child {
+#fxdanfzjlp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eppsqoquxv .gt_row {
+#fxdanfzjlp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -509,7 +520,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   overflow-x: hidden;
 }
 
-#eppsqoquxv .gt_stub {
+#fxdanfzjlp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -522,7 +533,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   padding-right: 5px;
 }
 
-#eppsqoquxv .gt_stub_row_group {
+#fxdanfzjlp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -536,15 +547,15 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   vertical-align: top;
 }
 
-#eppsqoquxv .gt_row_group_first td {
+#fxdanfzjlp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eppsqoquxv .gt_row_group_first th {
+#fxdanfzjlp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eppsqoquxv .gt_summary_row {
+#fxdanfzjlp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -554,16 +565,16 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   padding-right: 5px;
 }
 
-#eppsqoquxv .gt_first_summary_row {
+#fxdanfzjlp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_first_summary_row.thick {
+#fxdanfzjlp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eppsqoquxv .gt_last_summary_row {
+#fxdanfzjlp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -573,7 +584,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-bottom-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_grand_summary_row {
+#fxdanfzjlp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -583,7 +594,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   padding-right: 5px;
 }
 
-#eppsqoquxv .gt_first_grand_summary_row {
+#fxdanfzjlp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -593,7 +604,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-top-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_last_grand_summary_row_top {
+#fxdanfzjlp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -603,11 +614,11 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-bottom-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_striped {
+#fxdanfzjlp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eppsqoquxv .gt_table_body {
+#fxdanfzjlp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -616,7 +627,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-bottom-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_footnotes {
+#fxdanfzjlp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -630,7 +641,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-right-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_footnote {
+#fxdanfzjlp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -639,7 +650,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   padding-right: 5px;
 }
 
-#eppsqoquxv .gt_sourcenotes {
+#fxdanfzjlp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -653,7 +664,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   border-right-color: #D3D3D3;
 }
 
-#eppsqoquxv .gt_sourcenote {
+#fxdanfzjlp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -661,77 +672,77 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
   padding-right: 5px;
 }
 
-#eppsqoquxv .gt_left {
+#fxdanfzjlp .gt_left {
   text-align: left;
 }
 
-#eppsqoquxv .gt_center {
+#fxdanfzjlp .gt_center {
   text-align: center;
 }
 
-#eppsqoquxv .gt_right {
+#fxdanfzjlp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eppsqoquxv .gt_font_normal {
+#fxdanfzjlp .gt_font_normal {
   font-weight: normal;
 }
 
-#eppsqoquxv .gt_font_bold {
+#fxdanfzjlp .gt_font_bold {
   font-weight: bold;
 }
 
-#eppsqoquxv .gt_font_italic {
+#fxdanfzjlp .gt_font_italic {
   font-style: italic;
 }
 
-#eppsqoquxv .gt_super {
+#fxdanfzjlp .gt_super {
   font-size: 65%;
 }
 
-#eppsqoquxv .gt_footnote_marks {
+#fxdanfzjlp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eppsqoquxv .gt_asterisk {
+#fxdanfzjlp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eppsqoquxv .gt_indent_1 {
+#fxdanfzjlp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eppsqoquxv .gt_indent_2 {
+#fxdanfzjlp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eppsqoquxv .gt_indent_3 {
+#fxdanfzjlp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eppsqoquxv .gt_indent_4 {
+#fxdanfzjlp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eppsqoquxv .gt_indent_5 {
+#fxdanfzjlp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#eppsqoquxv .katex-display {
+#fxdanfzjlp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#eppsqoquxv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fxdanfzjlp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="periodicidade" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #00496D; color: #FFFFFF; font-weight: bold" scope="col">Periodicidade</th>
@@ -742,7 +753,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Frota de veículos" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Frota de veículos</td>
+<th colspan="4" id="Frota de veículos" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Frota de veículos</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="Frota de veículos  periodicidade">3+ anos de atraso e &lt; 5 anos</td>
@@ -763,7 +774,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
 <td class="gt_row gt_right" headers="Frota de veículos  notas">10,0</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Condutores" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Condutores</td>
+<th colspan="4" id="Condutores" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Condutores</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="Condutores  periodicidade">3+ anos de atraso e &lt; 5 anos</td>
@@ -784,7 +795,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
 <td class="gt_row gt_right" headers="Condutores  notas">10,0</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Infrações" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Infrações</td>
+<th colspan="4" id="Infrações" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Infrações</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="Infrações  periodicidade">3+ anos de atraso e &lt; 5 anos</td>
@@ -805,7 +816,7 @@ Tabela&nbsp;2.2: Critérios de avaliação para as categorias frota de veículos
 <td class="gt_row gt_right" headers="Infrações  notas">10,0</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Sinistros" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Sinistros</td>
+<th colspan="4" id="Sinistros" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Sinistros</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="Sinistros  periodicidade">3+ anos de atraso e &lt; 5 anos</td>
@@ -844,23 +855,23 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
 </figcaption>
 <div aria-describedby="tbl-cri-atend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="obeekfrpjw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#obeekfrpjw table {
+<div id="pmyszmaehk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pmyszmaehk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#obeekfrpjw thead, #obeekfrpjw tbody, #obeekfrpjw tfoot, #obeekfrpjw tr, #obeekfrpjw td, #obeekfrpjw th {
+#pmyszmaehk thead, #pmyszmaehk tbody, #pmyszmaehk tfoot, #pmyszmaehk tr, #pmyszmaehk td, #pmyszmaehk th {
   border-style: none;
 }
 
-#obeekfrpjw p {
+#pmyszmaehk p {
   margin: 0;
   padding: 0;
 }
 
-#obeekfrpjw .gt_table {
+#pmyszmaehk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -886,12 +897,12 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-left-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_caption {
+#pmyszmaehk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#obeekfrpjw .gt_title {
+#pmyszmaehk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -903,7 +914,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-bottom-width: 0;
 }
 
-#obeekfrpjw .gt_subtitle {
+#pmyszmaehk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -915,7 +926,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-top-width: 0;
 }
 
-#obeekfrpjw .gt_heading {
+#pmyszmaehk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -927,13 +938,13 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-right-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_bottom_border {
+#pmyszmaehk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_col_headings {
+#pmyszmaehk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -948,7 +959,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-right-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_col_heading {
+#pmyszmaehk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -968,7 +979,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   overflow-x: hidden;
 }
 
-#obeekfrpjw .gt_column_spanner_outer {
+#pmyszmaehk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -980,15 +991,15 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   padding-right: 4px;
 }
 
-#obeekfrpjw .gt_column_spanner_outer:first-child {
+#pmyszmaehk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#obeekfrpjw .gt_column_spanner_outer:last-child {
+#pmyszmaehk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#obeekfrpjw .gt_column_spanner {
+#pmyszmaehk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1000,11 +1011,11 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   width: 100%;
 }
 
-#obeekfrpjw .gt_spanner_row {
+#pmyszmaehk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#obeekfrpjw .gt_group_heading {
+#pmyszmaehk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1030,7 +1041,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   text-align: left;
 }
 
-#obeekfrpjw .gt_empty_group_heading {
+#pmyszmaehk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1045,15 +1056,15 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   vertical-align: middle;
 }
 
-#obeekfrpjw .gt_from_md > :first-child {
+#pmyszmaehk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#obeekfrpjw .gt_from_md > :last-child {
+#pmyszmaehk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#obeekfrpjw .gt_row {
+#pmyszmaehk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1072,7 +1083,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   overflow-x: hidden;
 }
 
-#obeekfrpjw .gt_stub {
+#pmyszmaehk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1085,7 +1096,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   padding-right: 5px;
 }
 
-#obeekfrpjw .gt_stub_row_group {
+#pmyszmaehk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1099,15 +1110,15 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   vertical-align: top;
 }
 
-#obeekfrpjw .gt_row_group_first td {
+#pmyszmaehk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#obeekfrpjw .gt_row_group_first th {
+#pmyszmaehk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#obeekfrpjw .gt_summary_row {
+#pmyszmaehk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1117,16 +1128,16 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   padding-right: 5px;
 }
 
-#obeekfrpjw .gt_first_summary_row {
+#pmyszmaehk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_first_summary_row.thick {
+#pmyszmaehk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#obeekfrpjw .gt_last_summary_row {
+#pmyszmaehk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1136,7 +1147,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-bottom-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_grand_summary_row {
+#pmyszmaehk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1146,7 +1157,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   padding-right: 5px;
 }
 
-#obeekfrpjw .gt_first_grand_summary_row {
+#pmyszmaehk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1156,7 +1167,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-top-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_last_grand_summary_row_top {
+#pmyszmaehk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1166,11 +1177,11 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-bottom-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_striped {
+#pmyszmaehk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#obeekfrpjw .gt_table_body {
+#pmyszmaehk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1179,7 +1190,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-bottom-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_footnotes {
+#pmyszmaehk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1193,7 +1204,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-right-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_footnote {
+#pmyszmaehk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1202,7 +1213,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   padding-right: 5px;
 }
 
-#obeekfrpjw .gt_sourcenotes {
+#pmyszmaehk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1216,7 +1227,7 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   border-right-color: #D3D3D3;
 }
 
-#obeekfrpjw .gt_sourcenote {
+#pmyszmaehk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1224,77 +1235,77 @@ Tabela&nbsp;2.3: Critérios de avaliação para a categoria atendimento ao públ
   padding-right: 5px;
 }
 
-#obeekfrpjw .gt_left {
+#pmyszmaehk .gt_left {
   text-align: left;
 }
 
-#obeekfrpjw .gt_center {
+#pmyszmaehk .gt_center {
   text-align: center;
 }
 
-#obeekfrpjw .gt_right {
+#pmyszmaehk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#obeekfrpjw .gt_font_normal {
+#pmyszmaehk .gt_font_normal {
   font-weight: normal;
 }
 
-#obeekfrpjw .gt_font_bold {
+#pmyszmaehk .gt_font_bold {
   font-weight: bold;
 }
 
-#obeekfrpjw .gt_font_italic {
+#pmyszmaehk .gt_font_italic {
   font-style: italic;
 }
 
-#obeekfrpjw .gt_super {
+#pmyszmaehk .gt_super {
   font-size: 65%;
 }
 
-#obeekfrpjw .gt_footnote_marks {
+#pmyszmaehk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#obeekfrpjw .gt_asterisk {
+#pmyszmaehk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#obeekfrpjw .gt_indent_1 {
+#pmyszmaehk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#obeekfrpjw .gt_indent_2 {
+#pmyszmaehk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#obeekfrpjw .gt_indent_3 {
+#pmyszmaehk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#obeekfrpjw .gt_indent_4 {
+#pmyszmaehk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#obeekfrpjw .gt_indent_5 {
+#pmyszmaehk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#obeekfrpjw .katex-display {
+#pmyszmaehk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#obeekfrpjw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pmyszmaehk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="stats" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #00496D; color: #FFFFFF; font-weight: bold" scope="col">Estatísticas</th>
@@ -1336,23 +1347,23 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
 </figcaption>
 <div aria-describedby="tbl-cri-educ-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="iymhzhzbop" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iymhzhzbop table {
+<div id="xwuxbmwopd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xwuxbmwopd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iymhzhzbop thead, #iymhzhzbop tbody, #iymhzhzbop tfoot, #iymhzhzbop tr, #iymhzhzbop td, #iymhzhzbop th {
+#xwuxbmwopd thead, #xwuxbmwopd tbody, #xwuxbmwopd tfoot, #xwuxbmwopd tr, #xwuxbmwopd td, #xwuxbmwopd th {
   border-style: none;
 }
 
-#iymhzhzbop p {
+#xwuxbmwopd p {
   margin: 0;
   padding: 0;
 }
 
-#iymhzhzbop .gt_table {
+#xwuxbmwopd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1378,12 +1389,12 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-left-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_caption {
+#xwuxbmwopd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iymhzhzbop .gt_title {
+#xwuxbmwopd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1395,7 +1406,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-bottom-width: 0;
 }
 
-#iymhzhzbop .gt_subtitle {
+#xwuxbmwopd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1407,7 +1418,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-top-width: 0;
 }
 
-#iymhzhzbop .gt_heading {
+#xwuxbmwopd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1419,13 +1430,13 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-right-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_bottom_border {
+#xwuxbmwopd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_col_headings {
+#xwuxbmwopd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1440,7 +1451,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-right-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_col_heading {
+#xwuxbmwopd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1460,7 +1471,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   overflow-x: hidden;
 }
 
-#iymhzhzbop .gt_column_spanner_outer {
+#xwuxbmwopd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1472,15 +1483,15 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   padding-right: 4px;
 }
 
-#iymhzhzbop .gt_column_spanner_outer:first-child {
+#xwuxbmwopd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iymhzhzbop .gt_column_spanner_outer:last-child {
+#xwuxbmwopd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iymhzhzbop .gt_column_spanner {
+#xwuxbmwopd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1492,11 +1503,11 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   width: 100%;
 }
 
-#iymhzhzbop .gt_spanner_row {
+#xwuxbmwopd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iymhzhzbop .gt_group_heading {
+#xwuxbmwopd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1522,7 +1533,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   text-align: left;
 }
 
-#iymhzhzbop .gt_empty_group_heading {
+#xwuxbmwopd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1537,15 +1548,15 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   vertical-align: middle;
 }
 
-#iymhzhzbop .gt_from_md > :first-child {
+#xwuxbmwopd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iymhzhzbop .gt_from_md > :last-child {
+#xwuxbmwopd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iymhzhzbop .gt_row {
+#xwuxbmwopd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1564,7 +1575,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   overflow-x: hidden;
 }
 
-#iymhzhzbop .gt_stub {
+#xwuxbmwopd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1577,7 +1588,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   padding-right: 5px;
 }
 
-#iymhzhzbop .gt_stub_row_group {
+#xwuxbmwopd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1591,15 +1602,15 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   vertical-align: top;
 }
 
-#iymhzhzbop .gt_row_group_first td {
+#xwuxbmwopd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iymhzhzbop .gt_row_group_first th {
+#xwuxbmwopd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iymhzhzbop .gt_summary_row {
+#xwuxbmwopd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1609,16 +1620,16 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   padding-right: 5px;
 }
 
-#iymhzhzbop .gt_first_summary_row {
+#xwuxbmwopd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_first_summary_row.thick {
+#xwuxbmwopd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iymhzhzbop .gt_last_summary_row {
+#xwuxbmwopd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1628,7 +1639,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-bottom-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_grand_summary_row {
+#xwuxbmwopd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1638,7 +1649,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   padding-right: 5px;
 }
 
-#iymhzhzbop .gt_first_grand_summary_row {
+#xwuxbmwopd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1648,7 +1659,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-top-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_last_grand_summary_row_top {
+#xwuxbmwopd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1658,11 +1669,11 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-bottom-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_striped {
+#xwuxbmwopd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iymhzhzbop .gt_table_body {
+#xwuxbmwopd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1671,7 +1682,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-bottom-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_footnotes {
+#xwuxbmwopd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1685,7 +1696,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-right-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_footnote {
+#xwuxbmwopd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1694,7 +1705,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   padding-right: 5px;
 }
 
-#iymhzhzbop .gt_sourcenotes {
+#xwuxbmwopd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1708,7 +1719,7 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   border-right-color: #D3D3D3;
 }
 
-#iymhzhzbop .gt_sourcenote {
+#xwuxbmwopd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1716,77 +1727,77 @@ Tabela&nbsp;2.4: Critérios de avaliação para a categoria educação para o tr
   padding-right: 5px;
 }
 
-#iymhzhzbop .gt_left {
+#xwuxbmwopd .gt_left {
   text-align: left;
 }
 
-#iymhzhzbop .gt_center {
+#xwuxbmwopd .gt_center {
   text-align: center;
 }
 
-#iymhzhzbop .gt_right {
+#xwuxbmwopd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iymhzhzbop .gt_font_normal {
+#xwuxbmwopd .gt_font_normal {
   font-weight: normal;
 }
 
-#iymhzhzbop .gt_font_bold {
+#xwuxbmwopd .gt_font_bold {
   font-weight: bold;
 }
 
-#iymhzhzbop .gt_font_italic {
+#xwuxbmwopd .gt_font_italic {
   font-style: italic;
 }
 
-#iymhzhzbop .gt_super {
+#xwuxbmwopd .gt_super {
   font-size: 65%;
 }
 
-#iymhzhzbop .gt_footnote_marks {
+#xwuxbmwopd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iymhzhzbop .gt_asterisk {
+#xwuxbmwopd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iymhzhzbop .gt_indent_1 {
+#xwuxbmwopd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iymhzhzbop .gt_indent_2 {
+#xwuxbmwopd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iymhzhzbop .gt_indent_3 {
+#xwuxbmwopd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iymhzhzbop .gt_indent_4 {
+#xwuxbmwopd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iymhzhzbop .gt_indent_5 {
+#xwuxbmwopd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iymhzhzbop .katex-display {
+#xwuxbmwopd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iymhzhzbop div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xwuxbmwopd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="conteudo" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #00496D; color: #FFFFFF; font-weight: bold" scope="col">Conteúdos didáticos</th>
@@ -1816,23 +1827,23 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
 </figcaption>
 <div aria-describedby="tbl-cri-cfcs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="kohdtmkaeu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kohdtmkaeu table {
+<div id="eoiihpatal" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eoiihpatal table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kohdtmkaeu thead, #kohdtmkaeu tbody, #kohdtmkaeu tfoot, #kohdtmkaeu tr, #kohdtmkaeu td, #kohdtmkaeu th {
+#eoiihpatal thead, #eoiihpatal tbody, #eoiihpatal tfoot, #eoiihpatal tr, #eoiihpatal td, #eoiihpatal th {
   border-style: none;
 }
 
-#kohdtmkaeu p {
+#eoiihpatal p {
   margin: 0;
   padding: 0;
 }
 
-#kohdtmkaeu .gt_table {
+#eoiihpatal .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1858,12 +1869,12 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-left-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_caption {
+#eoiihpatal .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kohdtmkaeu .gt_title {
+#eoiihpatal .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1875,7 +1886,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-bottom-width: 0;
 }
 
-#kohdtmkaeu .gt_subtitle {
+#eoiihpatal .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1887,7 +1898,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-top-width: 0;
 }
 
-#kohdtmkaeu .gt_heading {
+#eoiihpatal .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1899,13 +1910,13 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-right-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_bottom_border {
+#eoiihpatal .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_col_headings {
+#eoiihpatal .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1920,7 +1931,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-right-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_col_heading {
+#eoiihpatal .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1940,7 +1951,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   overflow-x: hidden;
 }
 
-#kohdtmkaeu .gt_column_spanner_outer {
+#eoiihpatal .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1952,15 +1963,15 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   padding-right: 4px;
 }
 
-#kohdtmkaeu .gt_column_spanner_outer:first-child {
+#eoiihpatal .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kohdtmkaeu .gt_column_spanner_outer:last-child {
+#eoiihpatal .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kohdtmkaeu .gt_column_spanner {
+#eoiihpatal .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1972,11 +1983,11 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   width: 100%;
 }
 
-#kohdtmkaeu .gt_spanner_row {
+#eoiihpatal .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kohdtmkaeu .gt_group_heading {
+#eoiihpatal .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2002,7 +2013,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   text-align: left;
 }
 
-#kohdtmkaeu .gt_empty_group_heading {
+#eoiihpatal .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2017,15 +2028,15 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   vertical-align: middle;
 }
 
-#kohdtmkaeu .gt_from_md > :first-child {
+#eoiihpatal .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kohdtmkaeu .gt_from_md > :last-child {
+#eoiihpatal .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kohdtmkaeu .gt_row {
+#eoiihpatal .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2044,7 +2055,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   overflow-x: hidden;
 }
 
-#kohdtmkaeu .gt_stub {
+#eoiihpatal .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2057,7 +2068,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   padding-right: 5px;
 }
 
-#kohdtmkaeu .gt_stub_row_group {
+#eoiihpatal .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2071,15 +2082,15 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   vertical-align: top;
 }
 
-#kohdtmkaeu .gt_row_group_first td {
+#eoiihpatal .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kohdtmkaeu .gt_row_group_first th {
+#eoiihpatal .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kohdtmkaeu .gt_summary_row {
+#eoiihpatal .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2089,16 +2100,16 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   padding-right: 5px;
 }
 
-#kohdtmkaeu .gt_first_summary_row {
+#eoiihpatal .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_first_summary_row.thick {
+#eoiihpatal .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kohdtmkaeu .gt_last_summary_row {
+#eoiihpatal .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2108,7 +2119,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-bottom-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_grand_summary_row {
+#eoiihpatal .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2118,7 +2129,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   padding-right: 5px;
 }
 
-#kohdtmkaeu .gt_first_grand_summary_row {
+#eoiihpatal .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2128,7 +2139,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-top-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_last_grand_summary_row_top {
+#eoiihpatal .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2138,11 +2149,11 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-bottom-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_striped {
+#eoiihpatal .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kohdtmkaeu .gt_table_body {
+#eoiihpatal .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2151,7 +2162,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-bottom-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_footnotes {
+#eoiihpatal .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2165,7 +2176,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-right-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_footnote {
+#eoiihpatal .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2174,7 +2185,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   padding-right: 5px;
 }
 
-#kohdtmkaeu .gt_sourcenotes {
+#eoiihpatal .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2188,7 +2199,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   border-right-color: #D3D3D3;
 }
 
-#kohdtmkaeu .gt_sourcenote {
+#eoiihpatal .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2196,77 +2207,77 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
   padding-right: 5px;
 }
 
-#kohdtmkaeu .gt_left {
+#eoiihpatal .gt_left {
   text-align: left;
 }
 
-#kohdtmkaeu .gt_center {
+#eoiihpatal .gt_center {
   text-align: center;
 }
 
-#kohdtmkaeu .gt_right {
+#eoiihpatal .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kohdtmkaeu .gt_font_normal {
+#eoiihpatal .gt_font_normal {
   font-weight: normal;
 }
 
-#kohdtmkaeu .gt_font_bold {
+#eoiihpatal .gt_font_bold {
   font-weight: bold;
 }
 
-#kohdtmkaeu .gt_font_italic {
+#eoiihpatal .gt_font_italic {
   font-style: italic;
 }
 
-#kohdtmkaeu .gt_super {
+#eoiihpatal .gt_super {
   font-size: 65%;
 }
 
-#kohdtmkaeu .gt_footnote_marks {
+#eoiihpatal .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kohdtmkaeu .gt_asterisk {
+#eoiihpatal .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kohdtmkaeu .gt_indent_1 {
+#eoiihpatal .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kohdtmkaeu .gt_indent_2 {
+#eoiihpatal .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kohdtmkaeu .gt_indent_3 {
+#eoiihpatal .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kohdtmkaeu .gt_indent_4 {
+#eoiihpatal .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kohdtmkaeu .gt_indent_5 {
+#eoiihpatal .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kohdtmkaeu .katex-display {
+#eoiihpatal .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kohdtmkaeu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eoiihpatal div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="lista" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #00496D; color: #FFFFFF; font-weight: bold" scope="col">Lista de CFCs credenciados</th>
@@ -2298,10 +2309,7 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
 </section>
 <section id="sec-method-rev" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="sec-method-rev"><span class="header-section-number">2.3</span> Consulta aos Detrans</h2>
-<p>Com a aplicação dos métodos anteriormente descritos, foi realizada uma consulta a todos os Detrans, para buscar uma validação do método de avaliação. Após o levantamento das informações e o cálculo das notas, o Observatório enviou o Ofício XXX/ONSV/2026, de XX de XX de 2026, em conjunto com uma análise individualizada dos resultados, solicitando aos Detrans / CET-MG as suas considerações sobre as pontuações levantadas pela equipe de autores.</p>
-<p>Em um segundo momento, o CEO do Observatório, Paulo Guimarães, enviou os documentos com as análises individualizadas dos resultados para os diretores de cada Detran, através do WhatsApp. As mensagens foram enviadas no dia XX de XX de 2026.</p>
-<p>No dia XX de XX de 2026, o trabalho foi apresentado no XXº Encontro Nacional de Detrans, em Brasília, com a presença de representantes de todos os Detrans doS Brasil. Na ocasião, o CEO do Observatório apresentou a metodologia e os resultados obtidos, além de abrir espaço para que os representantes dos Detrans pudessem se manifestar sobre o trabalho.</p>
-<p>Com isso, foi estabelecido um novo prazo para o retorno dos Detrans em relação ao conteúdo do trabalho: XX de XX de 2026. Até a data de publicação deste trabalho, obteve-se o feedback formalizado das seguintes instituições:Detran-XX, Detran-XX, Detran-XX e Detran-XX.</p>
+<p>Com a aplicação dos métodos anteriormente descritos, foi realizada uma consulta a todos os Detrans, para buscar uma validação do método de avaliação. Após o levantamento das informações e o cálculo das notas, o Observatório enviou o Ofício 17/2026-ONSV, de 02 de fevereiro de 2026, em conjunto com uma análise individualizada dos resultados, solicitando aos Detrans as suas considerações sobre as pontuações levantadas pela equipe de autores em um prazo de 40 dias. Foi obtido o retorno apenas do DETRAN-PB.</p>
 
 
 </section>
@@ -2358,13 +2366,14 @@ Tabela&nbsp;2.5: Critérios de avaliação para informações sobre CFCs
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
