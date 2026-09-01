@@ -14,7 +14,7 @@ library(ggiraph)
 library(knitr)
 source(here("R", "02-utils.R"))
 
-estados <- read_state()
+estados <- readRDS(here::here("R", "estados_br.rds"))
 load(here("data", "revisoes.rda"))
 
 font_families <- "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"

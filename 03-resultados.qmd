@@ -594,6 +594,12 @@ coldef1 <-
   colDef(
     format = colFormat(locales = "de-DE", digits = 1)
   )
+coldef0 <- 
+  colDef(
+    style = continuous_bg_func,
+    format = colFormat(locales = "de-DE", digits = 1),
+    name = "2020"
+  )
 
 coldef2 <- 
   colDef(
@@ -608,6 +614,15 @@ coldef3 <-
     format = colFormat(locales = "de-DE", digits = 1),
     name = "2025"
   )
+# Base com os dados manuais de 2020
+notas_2020 <- tibble::tibble(
+  uf = c("PR", "RS", "SP", "SE", "GO", "RO", "ES", "MS", "RJ", "AL", 
+         "MT", "MG", "DF", "RN", "SC", "PE", "RR", "AP", "PI", "MA", 
+         "CE", "TO", "PB", "PA", "AM", "AC", "BA"),
+  ano2020 = c(7.7, 7.7, 7.6, 7.6, 7.4, 7.1, 6.8, 6.2, 5.8, 5.6, 
+              5.6, 5.6, 5.4, 4.9, 4.9, 4.8, 4.3, 4.1, 4.1, 4.0, 
+              3.2, 2.9, 2.9, 2.6, 2.4, 2.3, 0.5)
+)
 
 variacao <- df_revisoes |>
   select(uf, nota_final, ano) |>
@@ -647,7 +662,9 @@ tbl_final = consulta_pre |>
   mutate(nota_final = rowMeans(across(frota:cfcs))) |>
   arrange(desc(nota_final)) |>
   select(-regiao) |>
+  left_join(notas_2020, by = "uf") |> # Junta 2020
   left_join(variacao, by = "uf") |>
+  relocate(ano2020, .before = ano2024) |> # Posiciona 2020 antes de 2024
   relocate(nota_final, .after = ano2024) |> 
   rename_with(.fn = str_to_title) |> 
   rename(
@@ -655,6 +672,7 @@ tbl_final = consulta_pre |>
     `Infrações` = Infracoes,
     `Educação` = Educ,
     CFCs = Cfcs,
+    ano_2020 = Ano2020, # Renomeia a coluna de 2020
     ano_2024 = Ano2024,
     ano_2025 = Nota_final
   )
@@ -743,7 +761,7 @@ print_results_text <- function(df_final, type = c("min", "max")) {
 }
 ```
 
-A @tbl-final apresenta as notas calculadas das categorias analisadas e a média final do valor referente a 2025. Também inclui-se as médias finais obtidas no estudo de 2024, a fins de comparação com os valores atuais. Ao realizar uma média nacional com base nas notas de todas as UFs, em 2025 o Brasil atinge a nota de `r calc_media(tbl_final, ano_2025)`. Isso representa um aumento de `r delta`, considerando a média nacional obtida em 2024, que foi de `r calc_media(tbl_final, ano_2024)`.
+A @tbl-final apresenta as notas calculadas das categorias analisadas e a média final do valor referente a 2025. Também inclui-se as médias finais obtidas no estudo de 2020 e  2024, a fins de comparação com os valores atuais. Ao realizar uma média nacional com base nas notas de todas as UFs, em 2025 o Brasil atinge a nota de `r calc_media(tbl_final, ano_2025)`. Isso representa um aumento de `r delta`, considerando a média nacional obtida em 2024, que foi de `r calc_media(tbl_final, ano_2024)`.
 
 Considerando os resultados de 2025, seguem os Detrans que obtiveram uma nota final acima de 7,0: `r print_results_text(tbl_final, "max")`. Dentre as menores notas, destaca-se os seguintes Detrans com as práticas mais iniciais: `r print_results_text(tbl_final, "min")`.
 
@@ -760,6 +778,7 @@ tbl_final |> make_reactable(
     Atendimento = coldef1,
     `Educação` = coldef1,
     CFCs = coldef1,
+    ano_2020 = coldef0,
     ano_2024 = coldef2,
     ano_2025 = coldef3
     )

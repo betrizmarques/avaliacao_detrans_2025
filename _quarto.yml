@@ -14,14 +14,14 @@ language:
 book:
   title: "Avaliação do Nível de Informações Disponibilizadas nos Portais dos Departamentos Estaduais de Trânsito - Detrans"
   author: 
-  - name: João Pedro Melani Saraiva
+  - name: Bruno Kalyton Lourenço de Negreiro
     affiliation:
     - id: onsv
       name: Observatório Nacional de Segurança Viária
-  - name: Pedro Augusto Borges dos Santos
+  - name: Ana Beatriz da Silva Marques
     affiliation: 
       - ref: onsv
-    orcid: 0000-0003-0550-4251
+    orcid: 0009-0005-0639-8325
   - name: Dr. Jorge Tiago Bastos
     affiliation: Universidade Federal do Paraná
     orcid: 0000-0001-6447-1504
